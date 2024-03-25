@@ -67,7 +67,7 @@ class IndexView(MeasureExecutionTimeMixin, views.TemplateView):
         response = super().dispatch(request, *args, **kwargs)
 
         response.set_cookie('load_count', load_count)
-        
+
         return response
 
     def get_context_data(self, **kwargs):  # overwriting to add 'sleep'
