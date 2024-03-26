@@ -1,6 +1,7 @@
-from django.http import HttpResponse
 from django.urls import path
 
+from drf_basics_demos.web.views import IndexView
+
 urlpatterns = (
-    path("", lambda r: HttpResponse("It works"), name="index"),
+    path("", IndexView.as_view(), name="index"),
 )
