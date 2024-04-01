@@ -63,14 +63,14 @@
                 };
                 const url = "{% url 'api_list_create_books' %}"
                 {# After login #}
-{#                sessionStorage.setItem("token", "....");#}
+                sessionStorage.setItem("token", "....");
                 fetch(url, {
                     method: "post",
                     body: JSON.stringify(data),
                     headers: {
                         "X-CSRFToken": csrftoken,
                         "content-type": "application/json",
-                        {#"Authorization": `Token ${sessionStorage.getItem("token")}`,#}
+                        "Authorization": `Token ${sessionStorage.getItem("token")}`,
                     },
                 })
                     .then(() => {
