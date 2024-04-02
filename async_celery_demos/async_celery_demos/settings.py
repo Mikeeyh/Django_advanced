@@ -82,6 +82,15 @@ DATABASES = {
     }
 }
 
+# Celery Configuration
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # URL of your message broker (e.g., Redis)
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # URL of your result backend (e.g., Redis)
+
+# # Celery Beat Configuration (Optional, for periodic tasks)
+# CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+#
+# # Celery Timezone
+# CELERY_TIMEZONE = 'UTC'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -123,3 +132,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = "1025"
