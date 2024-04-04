@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  django:
+    build: .
+    command: gunicorn git_deployment_demos.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+
+#    depends_on:
+#      - db
+  nginx:
+    image: nginx
+    ports:
+      - "81:80" # 81 on local machine, 80 inside the docker container
+    volumes:
+      - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "./static_files:/usr/share/nginx/html"
+#    env_file:
+#      - ./.env
