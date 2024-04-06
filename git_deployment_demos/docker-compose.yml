@@ -20,3 +20,5 @@ services:
       - "./static_files:/usr/share/nginx/html"
 #    env_file:
 #      - ./.env
+
+# in edit configurations we pick our django project then choose envfile and add it.
