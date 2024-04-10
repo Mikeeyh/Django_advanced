@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-uiomf@c*0op5bh&cy^^!(od5qv+f#-ii1l-d8czwfscg7qehci
 DEBUG = os.environ.get("DEBUG", 0)
 
 ALLOWED_HOSTS = [
-    '192.168.1.6',
+    "192.168.1.6",
     'localhost',
 ]
 # docker-compose up -d --force-recreate
